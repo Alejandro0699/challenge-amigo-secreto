@@ -18,12 +18,20 @@ function almacenarAmigos() {
         //obtenemos el valor del input y elinamos los espacios en blanco (para eso se utliza el trim.)
         let amigo= inputNombres.value.trim();
 
-        // validamos si el input esta vacio y luego lo retornamos 
+        // validamos si el input esta vacio y luego lo retornamos y luego la retornamos para detener la funcion.
         listaDeNombres.push(amigo);
         if (amigo === ""){
-            alert("Por favor ingrese un nombre valido.")
+            alert("Por favor ingrese un nombre valido.");
             return;
         }
+        //Evitamos nombres duplicados, usando el includes que sirve para verificar si ya existe el mismo nombre 
+        if (listaDeNombres.includes(amigo)){
+            alert("por favor ingrese un nombre nuevo");
+            return;
+        }
+        //agregamos los nombres de la lista utilizando el push
+        listaDeNombres.push(amigo);
+        
 
     
 }
