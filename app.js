@@ -15,10 +15,10 @@ function almacenarAmigos() {
         return
         }
 
-        //obtenemos el valor del input y elinamos los espacios en blanco (para eso se utliza el trim.)
+        //obtenemos el valor del input y eliminamos los espacios en blanco (para eso se utliza el trim.)
         let amigo= inputNombres.value.trim();
 
-        // validamos si el input esta vacio y luego lo retornamos y luego la retornamos para detener la funcion.
+        // validamos si el input esta vacio  y luego la retornamos para detener la funcion.
         listaDeNombres.push(amigo);
         if (amigo === ""){
             alert("Por favor ingrese un nombre valido.");
@@ -31,7 +31,23 @@ function almacenarAmigos() {
         }
         //agregamos los nombres de la lista utilizando el push
         listaDeNombres.push(amigo);
+        //limpiamos el input. Para po
+        inputNombres.value="";
+        }
+        
+        //creamos la funcion para actualizar la lista de nombres. utilizamos la lista UL y despues usamos el innerHTML para limpiar la lista antes de agregar un nuevo nombre
+        function actualizarLista(amigos) {
+            listaAmigosUL= document.getElementById("listaAmigos");
+            listaAmigosUL.innerHTML = "";
+            // utilizamos el bucle for para recorrer la lista completa i=0 significa que comienza en el primer nombre, despues significa que va a recorrer toda la lista y i++ significa que va a incrementar con cada interaccion 
+             for (let i= 0; i<listaDeNombres.length; i++ );
+
+                // tenemos que crear el elemento <li> para eso creamos una nueva variable
+            let nuevoElemento= document.createElement ("li");
+            //el nuevoElemento.textContent coloca los nombres en la lista <li>
+            nuevoElemento.textContent= listaDeNombres[i];
+            
         
 
-    
-}
+
+        }
